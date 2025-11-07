@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body { @apply bg-neutral-50 text-neutral-900; }
+}
+
+@layer components {
+  .container-px { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .btn { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium shadow-soft transition; }
+  .btn-primary { @apply btn bg-neutral-900 text-white hover:bg-neutral-800; }
+  .btn-ghost { @apply btn bg-white border border-neutral-200 hover:bg-neutral-50; }
+  .chip { @apply inline-flex items-center rounded-lg px-2 py-0.5 text-xs font-semibold; }
+  .field { @apply w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-2.5 outline-none focus:ring-2 focus:ring-neutral-900; }
+  .label { @apply mb-1.5 text-sm font-semibold; }
+  .price { @apply text-lg font-extrabold tracking-tight; }
+}

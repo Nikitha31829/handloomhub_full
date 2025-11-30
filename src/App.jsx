@@ -13,6 +13,7 @@ import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import ArtisanProfile from "./pages/ArtisanProfile.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
+import Profile from "./pages/Profile.jsx";
 import { useAuth } from "./state/AuthContext.jsx";
 
 export default function App() {
@@ -28,22 +29,15 @@ export default function App() {
           <Route path="/artisan/:id" element={<ArtisanProfile />} />
           <Route path="/artisans" element={<Artisans />} />
           <Route path="/cart" element={<Cart />} />
-          <Route
-            path="/checkout"
-            element={
-              <RequireAuth>
-                <Checkout />
-              </RequireAuth>
-            }
-          />
+          <Route path="/checkout" element={<RequireAuth><Checkout /></RequireAuth>} />
           <Route path="/confirmed" element={<Confirmed />} />
+          <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
 
-      {/* CTA band + footer */}
       <FooterCTA />
       <Footer />
     </div>
